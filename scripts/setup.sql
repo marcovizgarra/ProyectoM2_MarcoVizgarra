@@ -1,0 +1,20 @@
+CREATE TABLE IF NOT EXISTS"authors" (
+  "id" SERIAL PRIMARY KEY,
+  "name" VARCHAR(150) NOT NULL,
+  "email" VARCHAR(256) UNIQUE NOT NULL,
+  "bio" TEXT,
+  "created_at" TIMESTAMPTZ NOT NULL DEFAULT (now())
+);
+
+CREATE TABLE IF NOT EXISTS "posts" (
+  "id" SERIAL PRIMARY KEY,
+  "author_id" INTEGER NOT NULL,
+  "title" VARCHAR(200) NOT NULL,
+  "content" TEXT NOT NULL,
+  "published" BOOLEAN NOT NULL DEFAULT false,
+  "created_at" TIMESTAMPTZ NOT NULL DEFAULT (now()),
+  CONSTRAINT fk_author
+    FOREIGN KEY (author_id)
+    REFERENCES authors(id)
+    ON DELETE CASCADE
+);
