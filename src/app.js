@@ -1,4 +1,5 @@
 import express from 'express';
+import mainRouter from './routes/index.js';
 
 const app = express();
 
@@ -12,5 +13,8 @@ app.get('/health', (req, res) => {
         timestamp: new Date().toISOString()
     });
 });
+
+// main API routes
+app.use('/', mainRouter);
 
 export default app;
