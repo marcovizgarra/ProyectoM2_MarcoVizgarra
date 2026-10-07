@@ -56,7 +56,7 @@ export const addAuthor = async (req, res, next) => {
   }
 };
 
-// PUT authors (by id)
+// PUT update authors (by id)
 export const editAuthor = async (req, res, next) => {
   try {
     const { id } = req.params;

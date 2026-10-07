@@ -18,5 +18,6 @@ app.get('/health', (req, res) => {
 // main API routes
 app.use('/', mainRouter);
 app.use('/', errorHandler)
+app.use((_req, res) => res.status(404).json({ error: 'Ruta no encontrada' }));
 
 export default app;
