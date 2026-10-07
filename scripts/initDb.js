@@ -1,7 +1,15 @@
 import fs from 'node:fs/promises';
 import path from 'node:path';
+import process from 'node:process';
 import { fileURLToPath } from 'node:url';
 import { pool } from '../src/config/dbConnect.js';
+
+// Try loading local .env file natively if it exists
+try {
+  process.loadEnvFile();
+} catch {
+  // Ignored in cloud environments (Railway)
+}
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
