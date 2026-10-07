@@ -1,4 +1,4 @@
-TRUNCATE TABLE IF EXISTS posts, authors RESTART IDENTITY CASCADE;
+TRUNCATE TABLE posts, authors RESTART IDENTITY CASCADE;
 
 INSERT INTO authors (name, email, bio) VALUES
   ('Ana García', 'ana@example.com', 'Desarrolladora full-stack apasionada por Node.js'),
