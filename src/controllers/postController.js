@@ -1,7 +1,8 @@
 import { getAllPosts, getPostById, getPostsByAuthorId, createPost, updatePost, deletePost } from '../services/postService.js'
+import { getAuthorById } from '../services/authorService.js'
 
 // GET all posts
-export const getPosts = async (res, next) => {
+export const getPosts = async (_req, res, next) => {
   try {
     const posts = await getAllPosts();
     return res.status(200).json(posts);
