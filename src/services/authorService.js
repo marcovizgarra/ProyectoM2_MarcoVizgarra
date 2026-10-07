@@ -3,7 +3,7 @@ import { query } from '../config/dbConnect.js';
 // get all authors
 export const getAllAuthors = async () => {
     const sqlQuery = `
-        SELECT id, name, email, created_at
+        SELECT id, name, email, bio, created_at
         FROM authors
         ORDER BY id ASC;
     `

@@ -1,11 +1,4 @@
-import {
-  getAllAuthors,
-  getAuthorById,
-  getAuthorByEmail,
-  createAuthor,
-  updateAuthor,
-  deleteAuthor
-} from '../services/authorService.js';
+import { getAllAuthors, getAuthorById, getAuthorByEmail, createAuthor, updateAuthor, deleteAuthor } from '../services/authorService.js';
 
 // GET /authors
 export const getAuthors = async (req, res, next) => {
@@ -53,7 +46,7 @@ export const addAuthor = async (req, res, next) => {
     // Check duplicated emails
     const existingAuthor = await getAuthorByEmail(email);
     if (existingAuthor) {
-      return res.status(409).json({ error: 'Email already exists' });
+      return res.status(409).json({ error: 'El e-mail ingresado ya existe' });
     }
 
     const newAuthor = await createAuthor({ name, email, bio });
@@ -72,14 +65,14 @@ export const editAuthor = async (req, res, next) => {
     // Check if author exists
     const author = await getAuthorById(id);
     if (!author) {
-      return res.status(404).json({ error: 'Author not found' });
+      return res.status(404).json({ error: 'Author no encontrado' });
     }
 
     // Check if email exists
     if (email && email !== author.email) {
       const emailInUse = await getAuthorByEmail(email);
       if (emailInUse) {
-        return res.status(409).json({ error: 'Email already in use by another author' });
+        return res.status(409).json({ error: 'El e-mail ya se encuentra en uso por otro autor' });
       }
     }
 
@@ -97,10 +90,10 @@ export const removeAuthor = async (req, res, next) => {
     const isDeleted = await deleteAuthor(id);
 
     if (!isDeleted) {
-      return res.status(404).json({ error: 'Author not found' });
+      return res.status(404).json({ error: 'Autor no encontrado' });
     }
 
-    return res.status(200).json({ message: `Autor con id ${id} eliminado satisfactoriamente` });
+    return res.status(200).json({ message: `Autor con ${id} fue eliminado satisfactoriamente` });
   } catch (error) {
     next(error);
   }
