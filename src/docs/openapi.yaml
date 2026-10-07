@@ -6,7 +6,7 @@ info:
 servers:
   - url: http://localhost:3000
     description: Local development server
-  - url: '...'
+  - url: 'https://proyectom2marcovizgarra-production.up.railway.app/'
     description: Production server (Railway)
 
 paths:
