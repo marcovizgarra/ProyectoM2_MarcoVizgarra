@@ -62,7 +62,7 @@ export const updateAuthor = async (id, { name, email, bio } = {}) => {
         bio ?? null,
         id
     ];
-    
+
     const result = await query(sql, params);
     return result.rows[0] || null;
 }
