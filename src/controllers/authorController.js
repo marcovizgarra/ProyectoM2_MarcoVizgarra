@@ -1,6 +1,6 @@
 import { getAllAuthors, getAuthorById, getAuthorByEmail, createAuthor, updateAuthor, deleteAuthor } from '../services/authorService.js';
 
-// GET /authors
+// GET all authors
 export const getAuthors = async (req, res, next) => {
   try {
     const { email } = req.query;
@@ -22,7 +22,7 @@ export const getAuthors = async (req, res, next) => {
   }
 };
 
-// GET /authors/:id
+// GET authors by id
 export const getAuthor = async (req, res, next) => {
   try {
     const { id } = req.params;
@@ -38,7 +38,7 @@ export const getAuthor = async (req, res, next) => {
   }
 };
 
-// POST /authors
+// POST authors
 export const addAuthor = async (req, res, next) => {
   try {
     const { name, email, bio } = req.body;
@@ -56,7 +56,7 @@ export const addAuthor = async (req, res, next) => {
   }
 };
 
-// PUT /authors/:id
+// PUT authors (by id)
 export const editAuthor = async (req, res, next) => {
   try {
     const { id } = req.params;
@@ -83,7 +83,7 @@ export const editAuthor = async (req, res, next) => {
   }
 };
 
-// DELETE /authors/:id
+// DELETE authors (by id)
 export const removeAuthor = async (req, res, next) => {
   try {
     const { id } = req.params;
