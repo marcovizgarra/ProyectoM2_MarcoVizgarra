@@ -1,6 +1,6 @@
 # MiniBlog REST API
 
-RESTful API backend desarrollada con **Node.js**, **Express** y **PostgreSQL** (`pg`) para el servicio de publicaciones de la startup DevSpark[cite: 2]. Permite la gestión completa (CRUD) de autores y publicaciones con persistencia relacional, validación de esquemas de entrada, pruebas automatizadas de integración y despliegue continuo en la nube[cite: 2, 14].
+RESTful API backend desarrollada con **Node.js**, **Express** y **PostgreSQL** (`pg`) para el servicio de publicaciones de la startup DevSpark. Permite la gestión completa (CRUD) de autores y publicaciones con persistencia relacional, validación de esquemas de entrada, pruebas automatizadas de integración y despliegue continuo en la nube.
 
 ---
 
@@ -31,18 +31,18 @@ RESTful API backend desarrollada con **Node.js**, **Express** y **PostgreSQL** (
 ---
 ## Características Principales
 
-- **Arquitectura en capas limpia:** Separación estricta entre rutas, controladores, servicios y persistencia con consultas SQL parametrizadas[cite: 2, 7, 12].
-- **Persistencia nativa:** Uso directo del cliente `pg` (Pool de conexiones) sin ORMs pesados para optimización de recursos y consultas directas[cite: 2, 18, 19].
-- **Validación robusta:** Middlewares dedicados para sanitización y control de tipos, parámetros de ruta y cuerpos de petición[cite: 3, 4].
-- **Manejo centralizado de errores:** Captura estructurada de violaciones de integridad referencial de PostgreSQL (`23505`, `23503`) y errores de sintaxis[cite: 11, 15].
-- **Integración continua y testing:** Pruebas de integración automatizadas con Jest y Supertest (17/17 tests pasando)[cite: 14].
-- **Contrato OpenAPI 3.0:** Documentación viva e interactiva integrada con Swagger UI[cite: 1].
+- **Arquitectura en capas limpia:** Separación estricta entre rutas, controladores, servicios y persistencia con consultas SQL parametrizadas.
+- **Persistencia nativa:** Uso directo del cliente `pg` (Pool de conexiones) sin ORMs pesados para optimización de recursos y consultas directas.
+- **Validación robusta:** Middlewares dedicados para sanitización y control de tipos, parámetros de ruta y cuerpos de petición.
+- **Manejo centralizado de errores:** Captura estructurada de violaciones de integridad referencial de PostgreSQL (`23505`, `23503`) y errores de sintaxis.
+- **Integración continua y testing:** Pruebas de integración automatizadas con Jest y Supertest (17/17 tests pasando).
+- **Contrato OpenAPI 3.0:** Documentación viva e interactiva integrada con Swagger UI.
 
 ---
 
 ## Arquitectura del Proyecto
 
-El proyecto sigue una estructura modular orientada a capas[cite: 2, 5]:
+El proyecto sigue una estructura modular orientada a capas:
 
 ```text
 ProyectoM2_MarcoVizgarra
